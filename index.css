@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    color:#333 !important;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color:#333 !important;
+}
+
+.wrap{
+    width: 100vw;
+    background-color: coral;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.logo{
+    margin-left: 20px;
+    width: 20%;
+}
+
+.menu{
+    
+    display: flex;
+    width: 70%;
+
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid black;
+    text-align: center;
+    
+    
+}
+
+.menu>li {
+    display: flex;
+    align-items: center;
+    height: 50px;  
+    position: relative;
+}
+
+.menu >li a,.show{
+    display: inline-block;
+    width: 100px;
+
+    line-height: 30px;
+    background-color: aliceblue;
+    height: 30px;
+
+}
+
+
+
+ .sub-menu li a{
+     border-bottom: 1px solid black;
+} 
+.sub-menu{
+    position: absolute;
+    top:50px;
+
+    /* display: none; */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu li:hover > .sub-menu{
+    display: block;
+
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+}
+
+.hamburger{
+    display: none;
+}
+
+.show,.check{
+    display: none;
+}
+
+.line1,.line2,.line3{
+    width: 25px;
+    background-color: #333;
+    height: 3px;
+    margin-bottom: 5px;
+}
+.sub-menu li{
+    position: relative;
+}
+@media(max-width:768px){
+    .pc{
+        display: none !important;
+    }
+    .menu{
+        width: 50vw;
+        position: fixed;
+        top:50px;
+        right: 0;
+        height: 100vh;
+    
+        justify-content: unset;
+        background-color: coral;
+        flex-direction: column;
+        
+    }
+    .check{
+        display: none;
+    }
+    .show{
+        display: block;
+        color:white;
+        cursor: pointer;
+    }
+
+    .about{
+        display: flex;
+        flex-direction: column;
+        height: max-content !important;
+    }
+
+    .sub-menu{
+        position: static !important;
+        max-height: 0vh;
+        top:0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+    }
+
+
+
+    .check:checked ~ .sub-menu{
+        max-height: 100vh;
+        margin-top: 20px;
+        opacity: 1;
+        visibility: visible;
+        background-color: red;
+    }
+
+    .hamburger{
+        display: inline-block;
+        margin-right:20px;
+        cursor: pointer;
+    }
+
+
+
+}
