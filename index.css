@@ -26,6 +26,8 @@ a{
 .logo{
     margin-left: 20px;
     width: 20%;
+    color: white !important; 
+    font-weight: bold;
 }
 
 .menu{
@@ -35,7 +37,7 @@ a{
 
     align-items: center;
     justify-content: space-around;
-    border: 1px solid black;
+  
     text-align: center;
     
     
@@ -58,26 +60,27 @@ a{
 
 }
 
-
+.line1-active,.line2-active,.line3-active{
+    transition: all 0.3s ease-in;
+}
 
  .sub-menu li a{
      border-bottom: 1px solid black;
 } 
 .sub-menu{
     position: absolute;
-    top:50px;
-
-    /* display: none; */
+    top:60px;
     opacity: 0;
     visibility: hidden;
+    transition: all 0.5s ease;
 }
 
 .menu li:hover > .sub-menu{
     display: block;
-
+    top:50px;
     opacity: 1;
     visibility: visible;
-    transition: all 0.3s ease;
+  
 }
 
 .hamburger{
@@ -107,12 +110,32 @@ a{
         top:50px;
         right: 0;
         height: 100vh;
-    
+        transform: translateX(100%);
         justify-content: unset;
         background-color: coral;
         flex-direction: column;
+        transition: all 0.3s ease-in-out;
         
     }
+
+    .line1-active{
+        transform: rotate(-45deg) translate(-3px,2px);
+        margin-bottom: 0;
+    
+    }
+    .line2-active{
+        opacity: 0;
+     
+    }
+    .line3-active{
+        margin-bottom: 0;
+        transform: rotate(45deg) translate(-5px,-5px);
+    }
+    
+    .active{
+        transform: translateX(0);
+    }
+
     .check{
         display: none;
     }
@@ -137,7 +160,7 @@ a{
         overflow: hidden;
     }
 
-
+  
 
     .check:checked ~ .sub-menu{
         max-height: 100vh;

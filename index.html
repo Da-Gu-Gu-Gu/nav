@@ -10,14 +10,14 @@
 <body>
     <div class="wrap">
       
-            <div class="logo">AA</div>
-            <!-- <div class="nav-link"> -->
+            <div class="logo">Logo</div>
 
-                <ul class="menu">
+
+                <ul class="menu" id="menu">
                     <li><a href="#">Home</a></li>
                     <li class="about">
                         <label for="about-sub" class="show">About</label>
-                        <input type="checkbox" class="check" name="" id="about-sub" />
+                        <input type="checkbox" class="check" name="aa" id="about-sub" />
                       <a  href="#" class="about-menu pc"> About </a>
                             <ul class="sub-menu">
                                 <li ><a href="#"> Line 1 </a></li>
@@ -30,19 +30,29 @@
                     <li ><a href="#"> Contact </a></li>
                     <li ><a href="#"> Login </a></li>
                 </ul>
-            <!-- </div> -->
+
 
             <div class="hamburger" onclick="mobilemenu()">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+             
+                    <div class="line1" id="line1"></div>
+                    <div class="line2" id="line2"></div>
+                    <div class="line3" id="line3"></div>
+        
             </div>
     </div>
 </body>
 
 <script>
     function mobilemenu(){
-        alert('aa')
+        let menu=document.getElementById('menu')
+        let line1=document.getElementById('line1')
+        let line2=document.getElementById('line2')
+        let line3=document.getElementById('line3')
+        
+        menu.classList.toggle('active')
+        line1.classList.toggle('line1-active')
+        line2.classList.toggle('line2-active')
+        line3.classList.toggle('line3-active')
     }
 </script>
 
